@@ -1,0 +1,43 @@
+{
+  "name": "goblin",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "start": "webpack serve --open --mode development",
+    "build": "webpack --mode production",
+    "lint": "eslint .",
+    "test": "jest"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/immun4ik/Goblin.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/immun4ik/Goblin/issues"
+  },
+  "homepage": "https://github.com/immun4ik/Goblin#readme",
+  "devDependencies": {
+    "@babel/eslint-parser": "^7.28.0",
+    "clean-webpack-plugin": "^4.0.0",
+    "css-loader": "^7.1.2",
+    "html-webpack-plugin": "^5.6.3",
+    "style-loader": "^4.0.0",
+    "webpack": "^5.101.0",
+    "webpack-cli": "^6.0.1",
+    "webpack-dev-server": "^5.2.2"
+  },
+  "dependencies": {
+    "@babel/core": "^7.28.0",
+    "@babel/preset-env": "^7.28.0",
+    "babel-jest": "^30.0.5",
+    "babel-loader": "^10.0.0",
+    "eslint": "^9.32.0",
+    "eslint-webpack-plugin": "^5.0.2",
+    "jest": "^30.0.5",
+    "regenerator-runtime": "^0.14.1"
+  }
+}
