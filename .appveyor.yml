@@ -1,0 +1,27 @@
+
+version: "{build}"
+image: Ubuntu
+stack: node 20 
+branches:
+  only:
+    - main 
+
+install:
+  - echo "Installing Node.js dependencies..."
+  - npm install 
+
+build_script:
+  - echo "Starting project build (npm run build)..."
+  - npm run build 
+  - echo "Build completed successfully."
+
+artifacts:
+  - path: dist 
+
+deploy:
+  - provider: GitHubPages 
+    token: $(github_token)
+    repositorySlug: immun4ik/Goblin 
+    branch: gh-pages
+    skip_history: true
+    folder: dist
