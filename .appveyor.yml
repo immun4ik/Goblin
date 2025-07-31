@@ -1,7 +1,8 @@
 
 version: "{build}"
 image: ubuntu-20.04
-stack: node 20 
+environment:
+      nodejs_version: "20"
 branches:
   only:
     - main 
