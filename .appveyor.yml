@@ -1,28 +1,27 @@
+image: Ubuntu2204  
 
-version: "{build}"
-image: ubuntu-20.04
-environment:
-      nodejs_version: "20"
+stack: node 20  
+
 branches:
-  only:
-    - main 
+  only: 
+    - main
+
+cache: node_modules  
 
 install:
-  - echo "Installing Node.js dependencies..."
-  - npm install 
+  - yarn  
+
+build: off  
 
 build_script:
-  - echo "Starting project build (npm run build)..."
-  - npm run build 
-  - echo "Build completed successfully."
+  - yarn build
 
-artifacts:
-  - path: dist 
+test_script:
+  - yarn lint && yarn test  
 
-deploy:
-  - provider: GitHubPages 
-    token: $(github_token)
-    repositorySlug: immun4ik/Goblin 
-    branch: gh-pages
-    skip_history: true
-    folder: dist
+deploy_script:  
+  - git config --global credential.helper store
+  - git config --global user.name AppVeyor
+  - git config --global user.email ci@appveyor.com
+  - echo "https://$GITHUB_TOKEN:x-oauth-basic@github.com" > "$HOME/.git-credentials"
+  - npx gh-pages -d dist -u "appveyor-bot <ci@appveyor>"
