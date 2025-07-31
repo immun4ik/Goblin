@@ -1,7 +1,7 @@
 
 version: "{build}"
-image: Ubuntu
-stack: node 20 
+image: ubuntu-20.04
+stack: node 16 
 branches:
   only:
     - main 
