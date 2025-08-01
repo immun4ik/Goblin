@@ -23,7 +23,7 @@ module.exports = {
         filename: isProduction ? 'js/[name].[contenthash].js' : 'js/[name].bundle.js',
         path: path.resolve(__dirname, 'dist'),
         clean: true,
-        publicPath: '/',
+        publicPath: isProduction ? './' : '/',
     },
 
     
