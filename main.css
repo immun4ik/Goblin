@@ -1,0 +1,48 @@
+body {
+    font-family: Arial, sans-serif;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    margin: 0;
+    background-color: #f0f0f0;
+}
+
+h1 {
+    color: #333;
+    margin-bottom: 20px;
+}
+
+#game-board {
+    display: grid;
+    grid-template-columns: repeat(4, 100px); 
+    grid-template-rows: repeat(4, 100px); 
+    gap: 10px; 
+    width: fit-content; 
+    padding: 10px;
+    border: 3px solid #6c5ce7;
+    border-radius: 8px;
+    background-color: #dfe6e9;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.hole {
+    width: 100px;
+    height: 100px;
+    background-color: #a29bfe;
+    border: 2px dashed #4e40e0;
+    border-radius: 50%; 
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+}
+
+.goblin {
+    width: 90%; 
+    height: 90%;
+    object-fit: contain; 
+    transition: transform 0.2s ease-out; 
+}
+
